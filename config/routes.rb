@@ -10,5 +10,12 @@ Rails.application.routes.draw do
     resources :post_comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]
 	end
+ #  resources :users,only: [:show,:index,:edit,:update] do
+ #  resources :relationships, only: [:create, :destroy]
+	# end
+  resources :relationships, only: [:create, :destroy]
+  get 'users/:id/follows' => 'relationships#index' 
+  get 'users/:id/followers' => 'relationships#new', as: 'new_relationship'
+
 end
 

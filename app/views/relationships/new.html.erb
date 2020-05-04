@@ -1,0 +1,9 @@
+<div class="body">
+	<h3>Follower Users</h3>
+
+	<% @relationships_user.each do |relationship| %>
+	 		<ol>
+	 		<%= attachment_image_tag(@user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %>
+			<% end %>
+
+</div>

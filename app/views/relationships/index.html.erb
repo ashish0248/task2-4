@@ -1,0 +1,14 @@
+<div class="body">
+	<h3>Follow Users</h3>
+
+	<% @relationships_follow.each do |relationship| %>
+	 		<ol>
+	 		<%= attachment_image_tag(@user, :profile_image, :fill, 50, 50, fallback: "no-image-mini.jpg") %>
+	 		<%= user.name %>
+	 		<td>フォロー数 : <%=@relationships_follow.count %></td>
+			<% end %>
+
+</div>
+
+
+
