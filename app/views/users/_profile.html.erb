@@ -11,8 +11,14 @@
 			<th><%= user.introduction %></th>
 		</tr>
 		<tr>
-			<th>フォロー数 :<%= user.followings.count %> </th>
-			<th>フォロワー数 :<%= user.followers.count %> </th>
+			<th> フォロー数 : <%= link_to index_relationship_path(user) do %>
+				<%= user.followings.count %></th>
+				<% end %>
+		</tr>
+		<tr>
+			<th>フォロワー数 :<%= link_to new_relationship_path(user) do %>
+				<%= user.followers.count %></th>
+				<% end %> 
 		</tr>
 		<tr><th><%= render 'relationships/follow_button', user: user %></th></tr>
 </table>

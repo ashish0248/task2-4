@@ -15,7 +15,7 @@ Rails.application.routes.draw do
  #  resources :relationships, only: [:create, :destroy]
 	# end
   resources :relationships, only: [:create, :destroy]
-  get 'users/:id/follows' => 'relationships#index' 
+  get 'users/:id/follows' => 'relationships#index', as: 'index_relationship'
   get 'users/:id/followers' => 'relationships#new', as: 'new_relationship'
 
 end

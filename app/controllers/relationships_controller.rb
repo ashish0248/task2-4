@@ -2,16 +2,14 @@ class RelationshipsController < ApplicationController
     before_action :set_user, only:[:create, :destroy]
     # フォロー一覧
     def index
-    	@user = User.all
-      
-
+      @user = User.find(params[:id])
+      @users = @user.followings
     end
 
   # フォロワー一覧
     def new
-        @user = User.find(:id)
-        relationships = Relationship.user
-        @relationships_follower = Relationship.followers
+      @user = User.find(params[:id])
+      @users = @user.followers
     end
 
 
