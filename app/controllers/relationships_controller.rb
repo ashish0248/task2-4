@@ -3,8 +3,8 @@ class RelationshipsController < ApplicationController
     # フォロー一覧
     def index
     	@user = User.all
-    	relationships = Relationship.user
-        @relationships_follow = relationships.follows
+      
+
     end
 
   # フォロワー一覧
